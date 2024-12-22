@@ -1,10 +1,9 @@
 ﻿namespace TestOpcUaApp
 {
     using System.Threading;
-    using Opc.Ua;
     using Opc.UaFx;
     using Opc.UaFx.Server;
- 
+
     public class Program
     {
         public static void Main()
@@ -22,13 +21,20 @@
                 server.SessionCreated += Server_SessionCreated;
                 server.SessionClosed += Server_SessionClosed;
 
-                Console.Write($"Starting OPC-UA server '{server.Address}'.");
+                Console.WriteLine($"Starting OPC-UA server '{server.Address}'");
 
                 var acl = server.Security.UserNameAcl;
                 acl.AddEntry("unamecs", "psswrdCS!01");
                 acl.IsEnabled = true;
 
                 server.Start();
+
+                Console.WriteLine($"Datapoint '{temperatureNode.Name}:{temperatureNode.Id}'");
+                Console.WriteLine($"Datapoint '{humidityNode.Name}:{humidityNode.Id}'");
+                Console.WriteLine($"Datapoint '{pressureNode.Name}:{pressureNode.Id}'");
+
+                Console.Write($"Started at {DateTime.Now:HH:mm:ss}...");
+
 
                 while (true)
                 {
