@@ -4,7 +4,7 @@ Demonstration of a OPC-UA server that can be connected to by Azure IoT Operation
 
 ## Blog post
 
-The blog post on how to use this library is available [here](https://sandervandevelde.wordpress.com/2024/12/24/azure-iot-operations-reading-opa-ua-server-tags/).
+The blog post on how to use this library is available [here](https://sandervandevelde.wordpress.com/2024/12/24/azure-iot-operations-reading-opc-ua-server-tags/).
 
 It shows how to connect a custom OPC-UA server to Azure IoT Operations. 
 
