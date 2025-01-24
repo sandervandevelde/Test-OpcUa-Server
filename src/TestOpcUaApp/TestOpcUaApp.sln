@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOpcUaApp", "TestOpcUaApp.csproj", "{F3F2CEE6-56E8-483C-9BB3-188B0947903F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOpcUaClientApp", "..\TestOpcUaClientApp\TestOpcUaClientApp.csproj", "{5A6CB8A9-221E-41B9-AD8D-6FFBC42CE945}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F3F2CEE6-56E8-483C-9BB3-188B0947903F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F2CEE6-56E8-483C-9BB3-188B0947903F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3F2CEE6-56E8-483C-9BB3-188B0947903F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A6CB8A9-221E-41B9-AD8D-6FFBC42CE945}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A6CB8A9-221E-41B9-AD8D-6FFBC42CE945}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A6CB8A9-221E-41B9-AD8D-6FFBC42CE945}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A6CB8A9-221E-41B9-AD8D-6FFBC42CE945}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

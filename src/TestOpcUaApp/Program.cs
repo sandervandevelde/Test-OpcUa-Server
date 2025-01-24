@@ -35,7 +35,6 @@
 
                 Console.Write($"Started at {DateTime.Now:HH:mm:ss}...");
 
-
                 while (true)
                 {
                     // temperature
@@ -83,7 +82,7 @@
                     // sleep
 
                     Console.Write(".");
-                    Thread.Sleep(1000);
+                    Thread.Sleep(5000);
                 }
             }
         }
