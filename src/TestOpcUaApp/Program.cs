@@ -32,17 +32,19 @@
             acl.AddEntry("unamecs", "psswrdCS!01");
             acl.IsEnabled = true;
 
-            // machine alarm node
+            // machine event node
 
-            var alarmNode = new OpcEventNode(machine, "AlarmEvent");
-            alarmNode.Severity = OpcEventSeverity.Max;
-            machine.AddNotifier(server.SystemContext, alarmNode);
+            var eventNode = new OpcEventNode(machine, "AlarmEvent");
+            eventNode.DisplayName = "Alarm Event";
+            eventNode.Severity = OpcEventSeverity.Max;
+
+            machine.AddNotifier(server.SystemContext, eventNode);
 
             // start
 
             server.Start();
 
-            Console.WriteLine($"Event '{alarmNode.Name}:{alarmNode.Id}'");
+            Console.WriteLine($"Event '{eventNode.Name}:{eventNode.Id}'");
 
             Console.WriteLine($"Datapoint '{temperatureNode.Name}:{temperatureNode.Id}'");
             Console.WriteLine($"Datapoint '{humidityNode.Name}:{humidityNode.Id}'");
@@ -105,9 +107,9 @@
 
                 if (i % 2 == 0)
                 {
-                    alarmNode.Severity = OpcEventSeverity.Medium;
-                    alarmNode.Message = $"Urgent situation {i}";
-                    alarmNode.ReportEvent(server.SystemContext);
+                    eventNode.Severity = OpcEventSeverity.Medium;
+                    eventNode.Message = $"Urgent situation {i}";
+                    eventNode.ReportEvent(server.SystemContext);
 
                     Console.Write("!");
                 }
