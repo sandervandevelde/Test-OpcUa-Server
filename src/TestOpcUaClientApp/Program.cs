@@ -20,15 +20,9 @@ namespace TestOpcUaClientApp
             //AlarmEvent:ns=2;s=Machine/AlarmEvent
 
             var commands = new OpcSubscribeEvent[] {
-                
-
-                new OpcSubscribeEvent("ns=2;s=Machine", (sender, e) => 
+                new OpcSubscribeEvent("ns=2;s=Machine", (sender, e) =>
                     {
                         Console.WriteLine($"Command ns=2;s=Machine {e.Event.SourceName} {e.Event.EventType}, {e.Event.Time}, {e.Event.Message}");
-                    }),
-                new OpcSubscribeEvent("ns=2;s=Machine/AlarmEvent", (sender, e) => 
-                    {
-                        Console.WriteLine($"Command ns=2;s=Machine/AlarmEvent {e.Event.SourceName} {e.Event.EventType}, {e.Event.Time}, {e.Event.Message}");
                     })
             };
 
@@ -49,8 +43,6 @@ namespace TestOpcUaClientApp
                 Console.WriteLine($"temperature:{temperature}, humidity:{humidity}, pressure:{pressure}");
 
                 Thread.Sleep(1000);
-
-
 
                 i++;
 
