@@ -1,5 +1,7 @@
 ﻿namespace TestOpcUaApp
 {
+    using System.Net.Sockets;
+    using System.Net;
     using System.Threading;
     using Opc.UaFx;
     using Opc.UaFx.Server;
@@ -9,6 +11,8 @@
         public static void Main()
         {
             // machine data variable nodes
+
+            Console.WriteLine($"OPC-UA server started at {GetLocalIPAddress()}");
 
             var temperatureNode = new OpcDataVariableNode<double>("Temperature", 100.0);
             var humidityNode = new OpcDataVariableNode<double>("Humidity", 50.0);
@@ -113,6 +117,19 @@
 
                     Console.Write("!");
                 }
+            }
+        }
+
+        private static string GetLocalIPAddress()
+        {
+            string localIP;
+            using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+            {
+                socket.Connect("8.8.8.8", 65530);
+                IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+                localIP = endPoint.Address.ToString();
+
+                return localIP;
             }
         }
     }

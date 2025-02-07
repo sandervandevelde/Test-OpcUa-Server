@@ -11,6 +11,10 @@ namespace TestOpcUaClientApp
         {
             Console.WriteLine("I am an OPC-UA client!");
 
+            Console.WriteLine("Press a key to continue, when the server is running...");
+
+            Console.ReadKey();
+
             using var client = new OpcClient("opc.tcp://localhost:4840/");
 
             client.Security.UserIdentity = new OpcClientIdentity("unamecs", "psswrdCS!01");
